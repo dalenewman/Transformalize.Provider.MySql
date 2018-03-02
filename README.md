@@ -1,6 +1,6 @@
 ### Overview
 
-This adds an `MySql` provider to Transformalize using [MySql.Data](https://www.nuget.org/packages/MySql.Data/6.10.6).  It is a plug-in compatible with Transformalize 0.3.4-beta.
+This adds an `MySql` provider to Transformalize using [MySql.Data 6.7.9](https://www.nuget.org/packages/MySql.Data/6.7.9).  It is a plug-in compatible with Transformalize 0.3.4-beta.
 
 Build the Autofac project and put it's output into Transformalize's *plugins* folder.
 
