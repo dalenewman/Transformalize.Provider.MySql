@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Transformalize.Provider.MySql.Autofac</id>
+    <version>0.3.4-beta</version>
+    <title>Transformalize Transform using MySql Autofac Module</title>
+    <authors>Dale Newman</authors>
+    <owners>Dale Newman</owners>
+    <licenseUrl>https://github.com/dalenewman/Transformalize.Provider.MySql/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/dalenewman/Transformalize.Provider.MySql</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Transformalize Transform using MySql Autofac Module</description>
+    <releaseNotes>initial release</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>etl</tags>
+    <dependencies>
+      <group targetFramework="net452">
+        <dependency id="Autofac" version="4.6.2" />
+        <dependency id="Transformalize.Provider.MySql" version="0.3.4-beta" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Transformalize.Provider.MySql.Autofac\bin\Release\Transformalize.Provider.MySql.Autofac.dll" target="lib\net452\Transformalize.Provider.MySql.Autofac.dll" />
+  </files>
+</package>
