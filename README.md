@@ -10,7 +10,7 @@ Build the Autofac project and put it's output into Transformalize's *plugins* fo
 <add name='TestProcess' mode='init'>
   <connections>
     <add name='input' provider='bogus' seed='1' />
-    <add name='output' provider='mysql' server='localhost' database='junk' />
+    <add name='output' provider='mysql' database='junk' user='*' password='*' />
   </connections>
   <entities>
     <add name='Contact' size='1000'>
@@ -26,26 +26,26 @@ Build the Autofac project and put it's output into Transformalize's *plugins* fo
 </add>
 ```
 
-This writes 1000 rows of bogus data to an MySql database.
+This writes 1000 rows of bogus data to a MySql / MariaDb database.
 
 ### Read Usage
 
 ```xml
 <add name='TestProcess' >
   <connections>
-    <add name='input' provider='mysql' server='localhost' database='junk' />
+    <add name='input' provider='mysql' database='junk' user='*' password='*' />
   </connections>
   <entities>
     <add name='Contact' page='1' size='10'>
       <order>
-        <add field='identity' />
+        <add field='Identity' />
       </order>
       <fields>
-        <add name='identity' type='int' />
-        <add name='firstname' />
-        <add name='lastname' />
-        <add name='stars' type='byte' />
-        <add name='reviewers' type='int' />
+        <add name='Identity' type='int' />
+        <add name='FirstName' />
+        <add name='LastName' />
+        <add name='Stars' type='byte' />
+        <add name='Reviewers' type='int' />
       </fields>
     </add>
   </entities>
@@ -55,7 +55,7 @@ This writes 1000 rows of bogus data to an MySql database.
 This reads 10 rows of bogus data from a MySql database:
 
 <pre>
-<strong>identity,firstname,lastname,stars,reviewers</strong>
+<strong>Identity,FirstName,LastName,Stars,Reviewers</strong>
 1,Justin,Konopelski,3,153
 2,Eula,Schinner,2,41
 3,Tanya,Shanahan,4,412
@@ -69,4 +69,5 @@ This reads 10 rows of bogus data from a MySql database:
 
 ### Notes
 
-- TODO: Test with MariaDb
+- Tested with MariaDb 10.2
+- You have to provider `user` and `password`

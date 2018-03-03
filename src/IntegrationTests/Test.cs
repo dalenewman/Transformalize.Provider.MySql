@@ -32,14 +32,15 @@ namespace IntegrationTests {
     public class Test {
 
         [TestMethod]
+        [Ignore("You have to update user and password before running")]
         public void Write() {
-            const string xml = @"<add name='TestProcess' mode='init'>
+            const string xml = @"<add name='Bogus' mode='init'>
   <parameters>
     <add name='Size' type='int' value='1000' />
   </parameters>
   <connections>
     <add name='input' provider='bogus' seed='1' />
-    <add name='output' provider='mysql' server='localhost' database='junk' version='6' />
+    <add name='output' provider='mysql' database='junk' user='*' password='*' />
   </connections>
   <entities>
     <add name='Contact' size='@[Size]'>
@@ -67,19 +68,24 @@ namespace IntegrationTests {
         }
 
         [TestMethod]
+        [Ignore("You have to update user and password before running")]
         public void Read() {
-            const string xml = @"<add name='TestProcess'>
+            const string xml = @"<add name='Bogus'>
   <connections>
-    <add name='input' provider='elasticsearch' index='bogus' port='9200' version='6' />
+    <add name='input' provider='mysql' database='junk' user='*' password='*' />
     <add name='output' provider='internal' />
   </connections>
   <entities>
-    <add name='contact'>
+    <add name='BogusStar' alias='Contact' page='1' size='10'>
+      <order>
+        <add field='Identity' />
+      </order>
       <fields>
-        <add name='firstname' />
-        <add name='lastname' />
-        <add name='stars' type='byte' />
-        <add name='reviewers' type='int' />
+        <add name='Identity' type='int' />
+        <add name='FirstName' />
+        <add name='LastName' />
+        <add name='Stars' type='byte' />
+        <add name='Reviewers' type='int' />
       </fields>
     </add>
   </entities>
@@ -93,7 +99,7 @@ namespace IntegrationTests {
                     controller.Execute();
                     var rows = process.Entities.First().Rows;
 
-                    Assert.AreEqual(1000, rows.Count);
+                    Assert.AreEqual(10, rows.Count);
 
 
                 }

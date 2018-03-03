@@ -41,7 +41,7 @@ namespace IntegrationTests {
         public Connection OutputConnection { get; set; } = new Connection {
             Name = "output",
             Provider = "mysql",
-            ConnectionString = "Server=localhost;Database=northwindstar;Uid=root;Pwd=devdev1!;"
+            ConnectionString = "Server=localhost;Database=northwindstar;Uid=root;Pwd=*;"
         };
 
         public Process ResolveRoot(IContainer container, string file, bool init) {
