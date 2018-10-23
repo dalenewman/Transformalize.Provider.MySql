@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Provider.MySql</id>
-    <version>0.3.4-beta</version>
+    <version>0.3.5-beta</version>
     <title>Transformalize Transform using MySql</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -10,17 +10,17 @@
     <projectUrl>https://github.com/dalenewman/Transformalize.Provider.MySql</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Transformalize Transform using MySql</description>
-    <releaseNotes>initial release</releaseNotes>
+    <releaseNotes>target 462</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>etl</tags>
     <dependencies>
-      <group targetFramework="net452">
-        <dependency id="Transformalize.Provider.Ado" version="0.3.5-beta" />
-        <dependency id="MySql.Data" version="6.7.9" />
+      <group targetFramework="net462">
+        <dependency id="Transformalize.Provider.Ado" version="0.3.11-beta" />
+        <dependency id="MySql.Data" version="8.0.13" />
       </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="..\src\Transformalize.Provider.MySql\bin\Release\Transformalize.Provider.MySql.dll" target="lib\net452\Transformalize.Provider.MySql.dll" />
+    <file src="..\src\Transformalize.Provider.MySql\bin\Release\Transformalize.Provider.MySql.dll" target="lib\net462\Transformalize.Provider.MySql.dll" />
   </files>
 </package>
