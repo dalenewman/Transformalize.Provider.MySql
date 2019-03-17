@@ -1,8 +1,7 @@
 ### Overview
 
-This adds an `MySql` provider to Transformalize using [MySql.Data 8.0.13](https://www.nuget.org/packages/MySql.Data/8.0.13).  It is a plug-in compatible with Transformalize 0.3.10-beta.
-
-Build the Autofac project and put it's output into Transformalize's *plugins* folder.
+This is a `MySql` provider for Transformalize using [MySql.Data 8.0.15](https://www.nuget.org/packages/MySql.Data/8.0.13). 
+This plug-in ships with the [Transformalize CLI](https://github.com/dalenewman/Transformalize/tree/master/Pipeline.Command).
 
 ### Write Usage
 

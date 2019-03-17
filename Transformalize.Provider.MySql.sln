@@ -11,7 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8FE1844F-26A4-47BE-9507-F0333D42FABE}"
 	ProjectSection(SolutionItems) = preProject
 		nuget\nuget.bat = nuget\nuget.bat
-		nuget\nuget.exe = nuget\nuget.exe
 		nuget\Transformalize.Provider.MySql.Autofac.nuspec = nuget\Transformalize.Provider.MySql.Autofac.nuspec
 		nuget\Transformalize.Provider.MySql.nuspec = nuget\Transformalize.Provider.MySql.nuspec
 	EndProjectSection

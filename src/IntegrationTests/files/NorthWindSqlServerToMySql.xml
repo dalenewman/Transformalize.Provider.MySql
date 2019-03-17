@@ -1,16 +1,13 @@
-﻿<add name="NorthWind" enabled="true" mode="@(Mode)" environment="prod">
+﻿<add name="NorthWind" mode="@[Mode]" >
 
-  <environments >
-    <add name="prod">
-      <parameters>
-        <add name="Mode" value="default" />
-      </parameters>
-    </add>
-  </environments>
+   <parameters>
+      <add name="Mode" value="default" />
+      <add name="Password" value="*" />
+   </parameters>
 
   <connections>
     <add name="input" connection-string="Server=localhost;Database=NorthWind;Trusted_Connection=True;" />
-    <add name="output" provider="mysql" server="localhost" database="northwindstar" user="root" password="devdev1!" />
+    <add name="output" provider="mysql" server="localhost" database="northwindstar" user="root" password="@[Password]" />
   </connections>
 
   <maps>
@@ -31,11 +28,10 @@
         <add name="UnitPrice" type="decimal" precision="19" scale="4"/>
       </fields>
       <calculated-fields>
-        <add name="OrderDetailsExtendedPrice"
-             type="decimal"
-             precision="19"
-             scale="4"
-             t="copy(OrderDetailsQuantity,OrderDetailsUnitPrice,OrderDetailsDiscount).javascript(OrderDetailsQuantity * (OrderDetailsUnitPrice * (1-OrderDetailsDiscount)))">
+        <add name="OrderDetailsExtendedPrice" type="decimal" precision="19" scale="4">
+           <transforms>
+              <add method="jint" script="OrderDetailsQuantity * (OrderDetailsUnitPrice * (1-OrderDetailsDiscount))" />
+           </transforms>
         </add>
       </calculated-fields>
     </add>
@@ -91,7 +87,7 @@
         <add name="ContactName" length="30" ></add>
         <add name="ContactTitle" length="30" ></add>
         <add name="Country" length="15" ></add>
-        <add name="CustomerID" type="char" length="5" primary-key="true"></add>
+        <add name="CustomerID" type="string" length="5" primary-key="true"></add>
         <add name="Fax" length="24" ></add>
         <add name="Phone" length="24" ></add>
         <add name="PostalCode" length="10" ></add>
