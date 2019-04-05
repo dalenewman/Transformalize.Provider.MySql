@@ -35,7 +35,7 @@ namespace IntegrationTests {
    public class NorthWindIntegrationMySql {
 
       public string TestFile { get; set; } = @"Files\NorthWindSqlServerToMySql.xml";
-      private const string Password = "devdev1!";// "Wr0ngP@$$w0rd";
+      private const string Password = "Wr0ngP@$$w0rd"; // "";
 
       public Connection InputConnection { get; set; } = new Connection {
          Name = "input",
@@ -57,6 +57,8 @@ namespace IntegrationTests {
       //[Ignore("Needs local sql server and mysql databases and you have to set the password (above)")]
       public void Integration() {
 
+         var logger = new ConsoleLogger(LogLevel.Debug);
+
          // CORRECT DATA AND INITIAL LOAD
          using (var cn = new SqlServerConnectionFactory(InputConnection).GetConnection()) {
             cn.Open();
@@ -66,9 +68,10 @@ namespace IntegrationTests {
                 "));
          }
 
-         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Mode=init&Password={Password}")) {
+         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Mode=init&Password={Password}", logger)) {
+
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -81,9 +84,9 @@ namespace IntegrationTests {
          }
 
          // FIRST DELTA, NO CHANGES
-         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}")) {
+         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -103,9 +106,9 @@ namespace IntegrationTests {
             Assert.AreEqual(1, cn.Execute(sql));
          }
 
-         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}")) {
+         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -125,9 +128,9 @@ namespace IntegrationTests {
             Assert.AreEqual(1, cn.Execute("UPDATE Orders SET CustomerID = 'VICTE', Freight = 20.11 WHERE OrderId = 10254;"));
          }
 
-         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}")) {
+         using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }

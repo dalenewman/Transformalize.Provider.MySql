@@ -29,18 +29,20 @@ using Transformalize.Providers.MySql.Autofac;
 namespace IntegrationTests {
 
    [TestClass]
-   public class Test {
+   public class Test
+   {
+      private const string Pw = "Wr0ngP@$$w0rD";
 
       [TestMethod]
-      [Ignore("You have to update the password before running")]
+      // [Ignore("You have to update the password before running")]
       public void Write() {
-         const string xml = @"<add name='Bogus' mode='init'>
+         var xml = $@"<add name='Bogus' mode='init'>
   <parameters>
     <add name='Size' type='int' value='1000' />
   </parameters>
   <connections>
     <add name='input' provider='bogus' seed='1' />
-    <add name='output' provider='mysql' database='junk' user='root' password='*' />
+    <add name='output' provider='mysql' database='junk' user='root' password='{Pw}' />
   </connections>
   <entities>
     <add name='Contact' size='@[Size]'>
@@ -54,9 +56,10 @@ namespace IntegrationTests {
     </add>
   </entities>
 </add>";
-         using (var outer = new ConfigurationContainer().CreateScope(xml)) {
+         var logger = new ConsoleLogger(LogLevel.Debug);
+         using (var outer = new ConfigurationContainer().CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new BogusModule(), new MySqlModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new BogusModule(), new MySqlModule()).CreateScope(process, logger)) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
@@ -67,11 +70,11 @@ namespace IntegrationTests {
       }
 
       [TestMethod]
-      [Ignore("You have to update the password before running")]
+      // [Ignore("You have to update the password before running")]
       public void Read() {
-         const string xml = @"<add name='Bogus'>
+         var xml = $@"<add name='Bogus'>
   <connections>
-    <add name='input' provider='mysql' database='junk' user='root' password='*' />
+    <add name='input' provider='mysql' database='junk' user='root' password='{Pw}' />
     <add name='output' provider='internal' />
   </connections>
   <entities>
@@ -89,9 +92,10 @@ namespace IntegrationTests {
     </add>
   </entities>
 </add>";
-         using (var outer = new ConfigurationContainer().CreateScope(xml)) {
+         var logger = new ConsoleLogger(LogLevel.Debug);
+         using (var outer = new ConfigurationContainer().CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new TestContainer(new MySqlModule()).CreateScope(process, new ConsoleLogger(LogLevel.Debug))) {
+            using (var inner = new Container(new MySqlModule()).CreateScope(process, logger)) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
