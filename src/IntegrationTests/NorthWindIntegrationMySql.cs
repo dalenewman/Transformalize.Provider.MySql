@@ -71,7 +71,7 @@ namespace IntegrationTests {
          using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Mode=init&Password={Password}", logger)) {
 
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintTransformModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -86,7 +86,7 @@ namespace IntegrationTests {
          // FIRST DELTA, NO CHANGES
          using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintTransformModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -108,7 +108,7 @@ namespace IntegrationTests {
 
          using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintTransformModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
@@ -130,7 +130,7 @@ namespace IntegrationTests {
 
          using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Password={Password}", logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new MySqlModule(), new SqlServerModule(), new JintTransformModule()).CreateScope(process, logger)) {
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
             }
