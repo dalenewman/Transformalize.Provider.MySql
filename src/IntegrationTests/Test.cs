@@ -31,7 +31,7 @@ namespace IntegrationTests {
    [TestClass]
    public class Test
    {
-      private const string Pw = "Wr0ngP@$$w0rD";
+      private const string Pw = "Wr0ngP@$$w0rd";  //
 
       [TestMethod]
       // [Ignore("You have to update the password before running")]

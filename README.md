@@ -1,6 +1,6 @@
 ### Overview
 
-This is a `MySql` provider for Transformalize using [MySql.Data 8.0.15](https://www.nuget.org/packages/MySql.Data/8.0.13). 
+This is a `MySql` provider for Transformalize using MySqlConnector for .NET(https://mysqlconnector.net). 
 This plug-in ships with the [Transformalize CLI](https://github.com/dalenewman/Transformalize/tree/master/Pipeline.Command).
 
 ### Write Usage

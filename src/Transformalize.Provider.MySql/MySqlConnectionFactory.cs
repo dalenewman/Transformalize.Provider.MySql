@@ -24,10 +24,10 @@ using Transformalize.Configuration;
 using Transformalize.Providers.Ado;
 
 namespace Transformalize.Providers.MySql {
-    public class MySqlConnectionFactory : IConnectionFactory {
-        private static Dictionary<string, string> _types;
-        private readonly Connection _c;
-        public static Dictionary<string, string> Types => _types ?? (_types = new Dictionary<string, string> {
+   public class MySqlConnectionFactory : IConnectionFactory {
+      private static Dictionary<string, string> _types;
+      private readonly Connection _c;
+      public static Dictionary<string, string> Types => _types ?? (_types = new Dictionary<string, string> {
             {"int64", "BIGINT"},
             {"int", "INTEGER"},
             {"long", "BIGINT"},
@@ -52,65 +52,63 @@ namespace Transformalize.Providers.MySql {
             {"xml", "TEXT"}
         });
 
-        public AdoProvider AdoProvider { get; } = AdoProvider.MySql;
-        public string Terminator { get; } = ";";
+      public AdoProvider AdoProvider { get; } = AdoProvider.MySql;
+      public string Terminator { get; } = ";";
 
-        public MySqlConnectionFactory(Connection connection) {
-            _c = connection;
-        }
+      public MySqlConnectionFactory(Connection connection) {
+         _c = connection;
+      }
 
-        public IDbConnection GetConnection(string appName = null) {
-            return new MySqlConnection(GetConnectionString(appName));
-        }
+      public IDbConnection GetConnection(string appName = null) {
+         return new MySqlConnection(GetConnectionString(appName));
+      }
 
-        public string GetConnectionString(string appName = null) {
-            if (_c.ConnectionString != string.Empty) {
-                return _c.ConnectionString;
-            }
-
-            _c.ConnectionString = (new MySqlConnectionStringBuilder {
-                ConnectionTimeout = Convert.ToUInt32(_c.RequestTimeout),
-                // CharacterSet = "utf8mb4",
-                PersistSecurityInfo = true,
-                UsePerformanceMonitor = false,
-                Server = _c.Server,
-                Database = _c.Database,
-                Port = Convert.ToUInt32(_c.Port == 0 ? 3306 : _c.Port),
-                IntegratedSecurity = _c.User == string.Empty,
-                UserID = _c.User,
-                Password = _c.Password
-            }).ConnectionString;
-
+      public string GetConnectionString(string appName = null) {
+         if (_c.ConnectionString != string.Empty) {
             return _c.ConnectionString;
+         }
 
-        }
+         _c.ConnectionString = (new MySqlConnectionStringBuilder {
+            ConnectionTimeout = Convert.ToUInt32(_c.RequestTimeout),
+            // CharacterSet = "utf8mb4",
+            PersistSecurityInfo = true,
+            Server = _c.Server,
+            Database = _c.Database,
+            Port = Convert.ToUInt32(_c.Port == 0 ? 3306 : _c.Port),
+            UserID = _c.User,
+            Password = _c.Password
+         }).ConnectionString;
 
-        private static char L { get; } = '`';
-        private static char R { get; } = '`';
+         return _c.ConnectionString;
 
-        public string Enclose(string name) {
-            return L + name + R;
-        }
+      }
 
-        public string SqlDataType(Field f) {
+      private static char L { get; } = '`';
+      private static char R { get; } = '`';
 
-            var length = (new[] { "string", "char", "byte[]", "guid" }).Any(t => t == f.Type) ? $"({(f.Length)})" : string.Empty;
-            var dimensions = (new[] { "decimal" }).Any(s => s.Equals(f.Type)) ?
-                $"({f.Precision},{f.Scale})" :
-                string.Empty;
+      public string Enclose(string name) {
+         return L + name + R;
+      }
 
-            var sqlDataType = Types[f.Type];
+      public string SqlDataType(Field f) {
 
-            var type = string.Concat(sqlDataType, length, dimensions);
-            switch (type.ToLower()) {
-                case "varbinary(max)":
-                    return "BLOB";
-                case "varchar(max)":
-                    return "TEXT";
-                default:
-                    return type;
-            }
-        }
+         var length = (new[] { "string", "char", "byte[]", "guid" }).Any(t => t == f.Type) ? $"({(f.Length)})" : string.Empty;
+         var dimensions = (new[] { "decimal" }).Any(s => s.Equals(f.Type)) ?
+             $"({f.Precision},{f.Scale})" :
+             string.Empty;
 
-    }
+         var sqlDataType = Types[f.Type];
+
+         var type = string.Concat(sqlDataType, length, dimensions);
+         switch (type.ToLower()) {
+            case "varbinary(max)":
+               return "BLOB";
+            case "varchar(max)":
+               return "TEXT";
+            default:
+               return type;
+         }
+      }
+
+   }
 }
