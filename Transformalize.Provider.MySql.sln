@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
 	ProjectSection(SolutionItems) = preProject
@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cfg", "cfg", "{B0BC2A9C-961
 		cfg\read-me-write.xml = cfg\read-me-write.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{67396A1B-D447-4475-BAD4-BCB7DFEDDD66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider.Autofac", "Provider.Autofac", "{AAC906E9-EA84-477B-8725-D50EB1338605}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8FE1844F-26A4-47BE-9507-F0333D42FABE} = {C4563C88-9C80-4BD0-949E-AA64F111957E}
+		{4ED1E259-756A-40B8-9800-F563B59E0206} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
+		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73} = {AAC906E9-EA84-477B-8725-D50EB1338605}
 		{B0BC2A9C-9618-4E64-8DC5-2B8599A13BB7} = {C4563C88-9C80-4BD0-949E-AA64F111957E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
