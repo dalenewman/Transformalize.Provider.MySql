@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -45,17 +46,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "test\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration.Core", "test\Test.Integration.Core\Test.Integration.Core.csproj", "{B63B57F0-2529-4430-B9D6-88A04682CE3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Standard.21", "src\Transformalize.Provider.MySql.Standard.21\Transformalize.Provider.MySql.Standard.21.csproj", "{64FF183B-0B61-44D4-B473-EB63072B1230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Autofac.Standard.21", "src\Transformalize.Provider.MySql.Autofac.Standard.21\Transformalize.Provider.MySql.Autofac.Standard.21.csproj", "{F6871251-A4D5-4D68-BBBE-94585D7416F1}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{0fbafe2d-bf4e-402d-ae68-0ca33e6ba609}*SharedItemsImports = 4
 		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{1105e89f-d38e-4d5d-8ec1-41aaa9f412b2}*SharedItemsImports = 13
 		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{1a822564-c3eb-427a-a3f4-04254db7dc00}*SharedItemsImports = 5
 		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{4ed1e259-756a-40b8-9800-f563b59e0206}*SharedItemsImports = 4
+		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{64ff183b-0b61-44d4-b473-eb63072b1230}*SharedItemsImports = 5
 		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{737cdcee-77e6-4f93-92d3-dfb2bd3e52d6}*SharedItemsImports = 13
 		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{a311d592-4369-4a33-9414-6adc9dfe5eb7}*SharedItemsImports = 5
 		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{b63b57f0-2529-4430-b9d6-88a04682ce3b}*SharedItemsImports = 5
 		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{b952a059-9261-4ff3-833f-f96e4bfa67ed}*SharedItemsImports = 13
 		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{cd3477b9-14e5-4ea3-90b0-ca9299bcae73}*SharedItemsImports = 4
+		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{f6871251-a4d5-4d68-bbbe-94585d7416f1}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +93,14 @@ Global
 		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FF183B-0B61-44D4-B473-EB63072B1230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FF183B-0B61-44D4-B473-EB63072B1230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FF183B-0B61-44D4-B473-EB63072B1230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FF183B-0B61-44D4-B473-EB63072B1230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +117,8 @@ Global
 		{737CDCEE-77E6-4F93-92D3-DFB2BD3E52D6} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
 		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
 		{B63B57F0-2529-4430-B9D6-88A04682CE3B} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
+		{64FF183B-0B61-44D4-B473-EB63072B1230} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
+		{F6871251-A4D5-4D68-BBBE-94585D7416F1} = {AAC906E9-EA84-477B-8725-D50EB1338605}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {960FC2FA-8CAD-47A3-8A4E-4173AE406E71}
