@@ -35,7 +35,7 @@ namespace IntegrationTests {
    public class NorthWindIntegrationMySql {
 
       public string TestFile { get; set; } = @"Files\NorthWindSqlServerToMySql.xml";
-      private const string Password = "Wr0ngP@$$w0rd"; // ;
+      private const string Password = "devdev1!"; //Wr0ngP@$$w0rd
 
       public Connection InputConnection { get; set; } = new Connection {
          Name = "input",
