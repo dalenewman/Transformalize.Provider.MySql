@@ -14,7 +14,7 @@
     <PackageReference Include="Transformalize.Container.Autofac" Version="0.7.6-beta" />
     <PackageReference Include="Transformalize.Provider.Bogus.Autofac" Version="0.6.29-beta" />
     <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.6.28-beta" />
-    <PackageReference Include="Transformalize.Provider.SqlServer.Autofac" Version="0.7.6-beta" />
+    <PackageReference Include="Transformalize.Provider.SqlServer.Autofac" Version="0.7.8-beta" />
     <PackageReference Include="Transformalize.Transform.Jint.Autofac" Version="0.6.30-beta" />
   </ItemGroup>
 
