@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8FE1844F-26A4-47BE-9507-F0333D42FABE}"
 	ProjectSection(SolutionItems) = preProject
+		nuget\myget.bat = nuget\myget.bat
 		nuget\nuget.bat = nuget\nuget.bat
 		nuget\Transformalize.Provider.MySql.Autofac.nuspec = nuget\Transformalize.Provider.MySql.Autofac.nuspec
 		nuget\Transformalize.Provider.MySql.nuspec = nuget\Transformalize.Provider.MySql.nuspec
@@ -32,11 +33,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider.Autofac", "Provide
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Provider.MySql.Shared", "src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.shproj", "{B952A059-9261-4FF3-833F-F96E4BFA67ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Standard.20", "src\Transformalize.Provider.MySql.Standard.20\Transformalize.Provider.MySql.Standard.20.csproj", "{1A822564-C3EB-427A-A3F4-04254DB7DC00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Standard.20", "src\Transformalize.Provider.MySql.Standard.20\Transformalize.Provider.MySql.Standard.20.csproj", "{1A822564-C3EB-427A-A3F4-04254DB7DC00}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Provider.MySql.Autofac.Shared", "src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.shproj", "{1105E89F-D38E-4D5D-8EC1-41AAA9F412B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Autofac.Standard.20", "src\Transformalize.Provider.MySql.Autofac.Standard.20\Transformalize.Provider.MySql.Autofac.Standard.20.csproj", "{A311D592-4369-4A33-9414-6ADC9DFE5EB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Autofac.Standard.20", "src\Transformalize.Provider.MySql.Autofac.Standard.20\Transformalize.Provider.MySql.Autofac.Standard.20.csproj", "{A311D592-4369-4A33-9414-6ADC9DFE5EB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{7BD594D4-F240-4B95-A8A8-05680B10FDD8}"
 EndProject
@@ -44,11 +45,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Test.Integration.Shared", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "test\Test.Integration\Test.Integration.csproj", "{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration.Core", "test\Test.Integration.Core\Test.Integration.Core.csproj", "{B63B57F0-2529-4430-B9D6-88A04682CE3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Core", "test\Test.Integration.Core\Test.Integration.Core.csproj", "{B63B57F0-2529-4430-B9D6-88A04682CE3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Standard.21", "src\Transformalize.Provider.MySql.Standard.21\Transformalize.Provider.MySql.Standard.21.csproj", "{64FF183B-0B61-44D4-B473-EB63072B1230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Standard.21", "src\Transformalize.Provider.MySql.Standard.21\Transformalize.Provider.MySql.Standard.21.csproj", "{64FF183B-0B61-44D4-B473-EB63072B1230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Autofac.Standard.21", "src\Transformalize.Provider.MySql.Autofac.Standard.21\Transformalize.Provider.MySql.Autofac.Standard.21.csproj", "{F6871251-A4D5-4D68-BBBE-94585D7416F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Autofac.Standard.21", "src\Transformalize.Provider.MySql.Autofac.Standard.21\Transformalize.Provider.MySql.Autofac.Standard.21.csproj", "{F6871251-A4D5-4D68-BBBE-94585D7416F1}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
