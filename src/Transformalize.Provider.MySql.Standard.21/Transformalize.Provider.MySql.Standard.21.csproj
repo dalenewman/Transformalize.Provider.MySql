@@ -1,17 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-   <PropertyGroup>
-      <TargetFramework>netstandard2.1</TargetFramework>
-      <RootNamespace>Transformalize.Providers.MySql</RootNamespace>
-      <AssemblyName>Transformalize.Provider.MySql</AssemblyName>
-      <Version>0.8.1-beta</Version>
-   </PropertyGroup>
-
-   <Import Project="..\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems" Label="Shared" />
-
-   <ItemGroup>
-      <PackageReference Include="MySqlConnector" Version="0.64.2" />
-      <PackageReference Include="Transformalize.Provider.Ado" Version="0.8.1-beta" />
-   </ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Transformalize.Providers.MySql</RootNamespace>
+    <AssemblyName>Transformalize.Provider.MySql</AssemblyName>
+    <Version>0.8.15-beta</Version>
+  </PropertyGroup>
+  <Import Project="..\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="0.66.0" />
+    <PackageReference Include="Transformalize.Provider.Ado" Version="0.8.8-beta" />
+  </ItemGroup>
 </Project>
