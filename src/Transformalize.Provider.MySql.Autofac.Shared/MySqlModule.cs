@@ -16,6 +16,7 @@
 // limitations under the License.
 #endregion
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
@@ -33,6 +34,8 @@ namespace Transformalize.Providers.MySql.Autofac {
 
       private const string Provider = "mysql";
 
+      public Func<Connection, IConnectionFactory> ConnectionFactory { get; set; }
+
       protected override void Load(ContainerBuilder builder) {
 
          if (!builder.Properties.ContainsKey("Process")) {
@@ -45,7 +48,11 @@ namespace Transformalize.Providers.MySql.Autofac {
          foreach (var connection in process.Connections.Where(c => c.Provider == Provider)) {
 
             // Connection Factory
-            builder.Register<IConnectionFactory>(ctx => new MySqlConnectionFactory(connection)).Named<IConnectionFactory>(connection.Key).InstancePerLifetimeScope();
+            if(ConnectionFactory == null) {
+               builder.Register<IConnectionFactory>(ctx => new MySqlConnectionFactory(connection)).Named<IConnectionFactory>(connection.Key).InstancePerLifetimeScope();
+            } else {
+               builder.Register(ctx => ConnectionFactory(connection)).Named<IConnectionFactory>(connection.Key).InstancePerLifetimeScope();
+            }
 
             // Schema Reader
             builder.Register<ISchemaReader>(ctx => {
@@ -56,7 +63,7 @@ namespace Transformalize.Providers.MySql.Autofac {
          }
 
          // entity input
-         foreach (var entity in process.Entities.Where(e => process.Connections.First(c => c.Name == e.Connection).Provider == Provider)) {
+         foreach (var entity in process.Entities.Where(e => process.Connections.First(c => c.Name == e.Input).Provider == Provider)) {
 
             // INPUT READER
             builder.Register<IRead>(ctx => {
@@ -230,7 +237,7 @@ namespace Transformalize.Providers.MySql.Autofac {
                      handler.Register(TransformFactory.GetTransforms(ctx, context, primaryKey));
                      handler.Register(new StringTruncateTransfom(context, primaryKey));
 
-                     return new ParallelDeleteHandler(handler);
+                     return handler;
                   }).Named<IEntityDeleteHandler>(entity.Key);
                }
             }

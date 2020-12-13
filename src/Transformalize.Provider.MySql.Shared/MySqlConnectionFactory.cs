@@ -88,6 +88,8 @@ namespace Transformalize.Providers.MySql {
       private static char L { get; } = '`';
       private static char R { get; } = '`';
 
+      public bool SupportsLimit => true;
+
       public string Enclose(string name) {
          return L + name + R;
       }
