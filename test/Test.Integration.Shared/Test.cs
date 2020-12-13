@@ -22,6 +22,7 @@ using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
+using Transformalize.Providers.Ado.Autofac;
 using Transformalize.Providers.Bogus.Autofac;
 using Transformalize.Providers.Console;
 using Transformalize.Providers.MySql.Autofac;
@@ -31,7 +32,7 @@ namespace IntegrationTests {
    [TestClass]
    public class Test
    {
-      private const string Pw = "DevDev1!";  // Wr0ngP@$$w0rd
+      private const string Pw = "Wr0ngP@$$w0rd";  // 
 
       [TestMethod]
       // [Ignore("You have to update the password before running")]
@@ -44,9 +45,6 @@ namespace IntegrationTests {
     <add name='input' provider='bogus' seed='1' />
     <add name='output' provider='mysql' database='junk' user='root' password='{Pw}' />
   </connections>
-  <actions>
-    <add type='run' connection='output' before='true' after='false' command='create database junk' error-mode='continue' />
-  </actoions>
   <entities>
     <add name='Contact' size='@[Size]'>
       <fields>
@@ -62,7 +60,7 @@ namespace IntegrationTests {
          var logger = new ConsoleLogger(LogLevel.Debug);
          using (var outer = new ConfigurationContainer().CreateScope(xml, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new BogusModule(), new MySqlModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new BogusModule(), new AdoProviderModule(), new MySqlModule()).CreateScope(process, logger)) {
 
                var controller = inner.Resolve<IProcessController>();
                controller.Execute();
