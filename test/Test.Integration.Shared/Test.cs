@@ -31,7 +31,7 @@ namespace IntegrationTests {
    [TestClass]
    public class Test
    {
-      private const string Pw = "Wr0ngP@$$w0rd";  //
+      private const string Pw = "DevDev1!";  // Wr0ngP@$$w0rd
 
       [TestMethod]
       // [Ignore("You have to update the password before running")]
@@ -44,6 +44,9 @@ namespace IntegrationTests {
     <add name='input' provider='bogus' seed='1' />
     <add name='output' provider='mysql' database='junk' user='root' password='{Pw}' />
   </connections>
+  <actions>
+    <add type='run' connection='output' before='true' after='false' command='create database junk' error-mode='continue' />
+  </actoions>
   <entities>
     <add name='Contact' size='@[Size]'>
       <fields>

@@ -55,6 +55,8 @@ namespace Transformalize.Providers.MySql {
       public AdoProvider AdoProvider { get; } = AdoProvider.MySql;
       public string Terminator { get; } = ";";
 
+      public bool SupportsLimit { get; } = true;
+
       public MySqlConnectionFactory(Connection connection) {
          _c = connection;
       }

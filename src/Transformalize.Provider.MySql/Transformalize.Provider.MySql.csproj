@@ -32,8 +32,8 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CfgNet, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Cfg-NET.0.11.0\lib\net462\CfgNet.dll</HintPath>
+    <Reference Include="CfgNet, Version=0.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cfg-NET.0.13.2-beta\lib\net462\CfgNet.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
@@ -74,11 +74,11 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Transformalize, Version=0.6.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.0.6.29-beta\lib\net462\Transformalize.dll</HintPath>
+    <Reference Include="Transformalize, Version=0.8.27.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.0.8.28-beta\lib\net462\Transformalize.dll</HintPath>
     </Reference>
-    <Reference Include="Transformalize.Provider.Ado, Version=0.6.31.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Transformalize.Provider.Ado.0.6.31-beta\lib\net462\Transformalize.Provider.Ado.dll</HintPath>
+    <Reference Include="Transformalize.Provider.Ado, Version=0.8.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Transformalize.Provider.Ado.0.8.31-beta\lib\net462\Transformalize.Provider.Ado.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
