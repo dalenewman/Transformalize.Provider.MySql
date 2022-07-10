@@ -6,7 +6,7 @@
    </parameters>
 
   <connections>
-    <add name="input" connection-string="Server=localhost;Database=NorthWind;Trusted_Connection=True;" />
+    <add name="input" connection-string="Server=localhost;Database=NorthWind;User Id=sa;Password=@[Password];Trust Server Certificate=True;" />
     <add name="output" provider="mysql" server="localhost" database="northwindstar" user="root" password="@[Password]" />
   </connections>
 

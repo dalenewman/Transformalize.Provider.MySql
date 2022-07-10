@@ -35,12 +35,12 @@ namespace IntegrationTests {
    public class NorthWindIntegrationMySql {
 
       public string TestFile { get; set; } = @"Files\NorthWindSqlServerToMySql.xml";
-      private const string Password = "Wr0ngP@$$w0rd"; //
+      private const string Password = "Wr0ngP@$$w0rd";
 
       public Connection InputConnection { get; set; } = new Connection {
          Name = "input",
          Provider = "sqlserver",
-         ConnectionString = "server=localhost;database=NorthWind;trusted_connection=true;"
+         ConnectionString = $"server=localhost;database=NorthWind;User Id=sa;Password={Password};Trust Server Certificate=True;"
       };
 
       public Connection OutputConnection { get; set; } = new Connection {

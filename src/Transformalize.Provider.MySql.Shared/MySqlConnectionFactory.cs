@@ -15,11 +15,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 #endregion
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using MySql.Data.MySqlClient;
 using Transformalize.Configuration;
 using Transformalize.Providers.Ado;
 
