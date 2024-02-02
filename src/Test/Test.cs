@@ -17,8 +17,6 @@
 #endregion
 
 using Autofac;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
@@ -30,14 +28,15 @@ using Transformalize.Providers.MySql.Autofac;
 namespace IntegrationTests {
 
    [TestClass]
-   public class Test
-   {
+   public class Test {
+
       private const string Pw = "Wr0ngP@$$w0rd";
 
       [TestMethod]
-      // [Ignore("You have to update the password before running")]
-      public void Write() {
-         var xml = $@"<add name='Bogus' mode='init'>
+      public void WriteThenRead() {
+
+         var logger = new ConsoleLogger(LogLevel.Debug);
+         var writeXml = $@"<add name='Bogus' mode='init'>
   <parameters>
     <add name='Size' type='int' value='1000' />
   </parameters>
@@ -57,8 +56,7 @@ namespace IntegrationTests {
     </add>
   </entities>
 </add>";
-         var logger = new ConsoleLogger(LogLevel.Debug);
-         using (var outer = new ConfigurationContainer().CreateScope(xml, logger)) {
+         using (var outer = new ConfigurationContainer().CreateScope(writeXml, logger)) {
             var process = outer.Resolve<Process>();
             using (var inner = new Container(new BogusModule(), new AdoProviderModule(), new MySqlModule()).CreateScope(process, logger)) {
 
@@ -68,12 +66,8 @@ namespace IntegrationTests {
                Assert.AreEqual(process.Entities.First().Inserts, (uint)1000);
             }
          }
-      }
 
-      [TestMethod]
-      // [Ignore("You have to update the password before running")]
-      public void Read() {
-         var xml = $@"<add name='Bogus'>
+         var readXml = $@"<add name='Bogus'>
   <connections>
     <add name='input' provider='mysql' database='junk' user='root' password='{Pw}' />
     <add name='output' provider='internal' />
@@ -93,8 +87,7 @@ namespace IntegrationTests {
     </add>
   </entities>
 </add>";
-         var logger = new ConsoleLogger(LogLevel.Debug);
-         using (var outer = new ConfigurationContainer().CreateScope(xml, logger)) {
+         using (var outer = new ConfigurationContainer().CreateScope(readXml, logger)) {
             var process = outer.Resolve<Process>();
             using (var inner = new Container(new MySqlModule()).CreateScope(process, logger)) {
 

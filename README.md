@@ -1,7 +1,6 @@
 ### Overview
 
 This is a `MySql` provider for Transformalize using MySqlConnector for .NET(https://mysqlconnector.net). 
-This plug-in ships with the [Transformalize CLI](https://github.com/dalenewman/Transformalize/tree/master/Pipeline.Command).
 
 ### Write Usage
 
@@ -68,5 +67,5 @@ This reads 10 rows of bogus data from a MySql database:
 
 ### Notes
 
-- Tested with MariaDb 10.2
-- You have to provider `user` and `password`
+- Tested with MySql 8
+- You have to make a database called "junk" and provide `user` and `password`

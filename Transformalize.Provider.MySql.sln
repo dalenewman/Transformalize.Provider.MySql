@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4563C88-9C80-4BD0-949E-AA64F111957E}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,109 +17,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8FE1844F
 		nuget\Transformalize.Provider.MySql.nuspec = nuget\Transformalize.Provider.MySql.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql", "src\Transformalize.Provider.MySql\Transformalize.Provider.MySql.csproj", "{4ED1E259-756A-40B8-9800-F563B59E0206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\Test\Test.csproj", "{408716CF-52CF-414A-BB37-A1BDEB2608E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.MySql.Autofac", "src\Transformalize.Provider.MySql.Autofac\Transformalize.Provider.MySql.Autofac.csproj", "{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql", "src\Transformalize.Provider.MySql\Transformalize.Provider.MySql.csproj", "{5C79B1B1-BB05-4C64-B9D6-9F44598C468B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cfg", "cfg", "{B0BC2A9C-9618-4E64-8DC5-2B8599A13BB7}"
-	ProjectSection(SolutionItems) = preProject
-		cfg\read-me-read.xml = cfg\read-me-read.xml
-		cfg\read-me-write.xml = cfg\read-me-write.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{67396A1B-D447-4475-BAD4-BCB7DFEDDD66}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider.Autofac", "Provider.Autofac", "{AAC906E9-EA84-477B-8725-D50EB1338605}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Provider.MySql.Shared", "src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.shproj", "{B952A059-9261-4FF3-833F-F96E4BFA67ED}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Standard.20", "src\Transformalize.Provider.MySql.Standard.20\Transformalize.Provider.MySql.Standard.20.csproj", "{1A822564-C3EB-427A-A3F4-04254DB7DC00}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Transformalize.Provider.MySql.Autofac.Shared", "src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.shproj", "{1105E89F-D38E-4D5D-8EC1-41AAA9F412B2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Autofac.Standard.20", "src\Transformalize.Provider.MySql.Autofac.Standard.20\Transformalize.Provider.MySql.Autofac.Standard.20.csproj", "{A311D592-4369-4A33-9414-6ADC9DFE5EB7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{7BD594D4-F240-4B95-A8A8-05680B10FDD8}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Test.Integration.Shared", "test\Test.Integration.Shared\Test.Integration.Shared.shproj", "{737CDCEE-77E6-4F93-92D3-DFB2BD3E52D6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "test\Test.Integration\Test.Integration.csproj", "{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Integration.Core", "test\Test.Integration.Core\Test.Integration.Core.csproj", "{B63B57F0-2529-4430-B9D6-88A04682CE3B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Standard.21", "src\Transformalize.Provider.MySql.Standard.21\Transformalize.Provider.MySql.Standard.21.csproj", "{64FF183B-0B61-44D4-B473-EB63072B1230}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Autofac.Standard.21", "src\Transformalize.Provider.MySql.Autofac.Standard.21\Transformalize.Provider.MySql.Autofac.Standard.21.csproj", "{F6871251-A4D5-4D68-BBBE-94585D7416F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.MySql.Autofac", "src\Transformalize.Provider.MySql.Autofac\Transformalize.Provider.MySql.Autofac.csproj", "{9F1584A1-7352-4F1F-BD41-18F4EB810EAD}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{0fbafe2d-bf4e-402d-ae68-0ca33e6ba609}*SharedItemsImports = 4
-		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{1105e89f-d38e-4d5d-8ec1-41aaa9f412b2}*SharedItemsImports = 13
-		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{1a822564-c3eb-427a-a3f4-04254db7dc00}*SharedItemsImports = 5
-		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{4ed1e259-756a-40b8-9800-f563b59e0206}*SharedItemsImports = 4
-		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{64ff183b-0b61-44d4-b473-eb63072b1230}*SharedItemsImports = 5
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{737cdcee-77e6-4f93-92d3-dfb2bd3e52d6}*SharedItemsImports = 13
-		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{a311d592-4369-4a33-9414-6adc9dfe5eb7}*SharedItemsImports = 5
-		test\Test.Integration.Shared\Test.Integration.Shared.projitems*{b63b57f0-2529-4430-b9d6-88a04682ce3b}*SharedItemsImports = 5
-		src\Transformalize.Provider.MySql.Shared\Transformalize.Provider.MySql.Shared.projitems*{b952a059-9261-4ff3-833f-f96e4bfa67ed}*SharedItemsImports = 13
-		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{cd3477b9-14e5-4ea3-90b0-ca9299bcae73}*SharedItemsImports = 4
-		src\Transformalize.Provider.MySql.Autofac.Shared\Transformalize.Provider.MySql.Autofac.Shared.projitems*{f6871251-a4d5-4d68-bbbe-94585d7416f1}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4ED1E259-756A-40B8-9800-F563B59E0206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4ED1E259-756A-40B8-9800-F563B59E0206}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4ED1E259-756A-40B8-9800-F563B59E0206}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4ED1E259-756A-40B8-9800-F563B59E0206}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A822564-C3EB-427A-A3F4-04254DB7DC00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A822564-C3EB-427A-A3F4-04254DB7DC00}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A822564-C3EB-427A-A3F4-04254DB7DC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A822564-C3EB-427A-A3F4-04254DB7DC00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A311D592-4369-4A33-9414-6ADC9DFE5EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A311D592-4369-4A33-9414-6ADC9DFE5EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A311D592-4369-4A33-9414-6ADC9DFE5EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A311D592-4369-4A33-9414-6ADC9DFE5EB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B63B57F0-2529-4430-B9D6-88A04682CE3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64FF183B-0B61-44D4-B473-EB63072B1230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64FF183B-0B61-44D4-B473-EB63072B1230}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64FF183B-0B61-44D4-B473-EB63072B1230}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64FF183B-0B61-44D4-B473-EB63072B1230}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6871251-A4D5-4D68-BBBE-94585D7416F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408716CF-52CF-414A-BB37-A1BDEB2608E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408716CF-52CF-414A-BB37-A1BDEB2608E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408716CF-52CF-414A-BB37-A1BDEB2608E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408716CF-52CF-414A-BB37-A1BDEB2608E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C79B1B1-BB05-4C64-B9D6-9F44598C468B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C79B1B1-BB05-4C64-B9D6-9F44598C468B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C79B1B1-BB05-4C64-B9D6-9F44598C468B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C79B1B1-BB05-4C64-B9D6-9F44598C468B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1584A1-7352-4F1F-BD41-18F4EB810EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1584A1-7352-4F1F-BD41-18F4EB810EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1584A1-7352-4F1F-BD41-18F4EB810EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1584A1-7352-4F1F-BD41-18F4EB810EAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8FE1844F-26A4-47BE-9507-F0333D42FABE} = {C4563C88-9C80-4BD0-949E-AA64F111957E}
-		{4ED1E259-756A-40B8-9800-F563B59E0206} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
-		{CD3477B9-14E5-4EA3-90B0-CA9299BCAE73} = {AAC906E9-EA84-477B-8725-D50EB1338605}
-		{B0BC2A9C-9618-4E64-8DC5-2B8599A13BB7} = {C4563C88-9C80-4BD0-949E-AA64F111957E}
-		{B952A059-9261-4FF3-833F-F96E4BFA67ED} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
-		{1A822564-C3EB-427A-A3F4-04254DB7DC00} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
-		{1105E89F-D38E-4D5D-8EC1-41AAA9F412B2} = {AAC906E9-EA84-477B-8725-D50EB1338605}
-		{A311D592-4369-4A33-9414-6ADC9DFE5EB7} = {AAC906E9-EA84-477B-8725-D50EB1338605}
-		{737CDCEE-77E6-4F93-92D3-DFB2BD3E52D6} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
-		{0FBAFE2D-BF4E-402D-AE68-0CA33E6BA609} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
-		{B63B57F0-2529-4430-B9D6-88A04682CE3B} = {7BD594D4-F240-4B95-A8A8-05680B10FDD8}
-		{64FF183B-0B61-44D4-B473-EB63072B1230} = {67396A1B-D447-4475-BAD4-BCB7DFEDDD66}
-		{F6871251-A4D5-4D68-BBBE-94585D7416F1} = {AAC906E9-EA84-477B-8725-D50EB1338605}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {960FC2FA-8CAD-47A3-8A4E-4173AE406E71}
