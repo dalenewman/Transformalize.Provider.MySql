@@ -29,13 +29,13 @@ using Transformalize.Providers.SqlServer;
 using Transformalize.Providers.SqlServer.Autofac;
 using Transformalize.Transforms.Jint.Autofac;
 
-namespace IntegrationTests {
+namespace Test {
 
    [TestClass]
    public class NorthWindIntegrationMySql {
 
       public string TestFile { get; set; } = @"Files\NorthWindSqlServerToMySql.xml";
-      private const string Password = "Wr0ngP@$$w0rd";
+      private const string Password = "DevDev1!"; // "Wr0ngP@$$w0rd";
 
       public Connection InputConnection { get; set; } = new Connection {
          Name = "input",

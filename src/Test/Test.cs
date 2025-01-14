@@ -25,12 +25,12 @@ using Transformalize.Providers.Bogus.Autofac;
 using Transformalize.Providers.Console;
 using Transformalize.Providers.MySql.Autofac;
 
-namespace IntegrationTests {
+namespace Test {
 
    [TestClass]
    public class Test {
 
-      private const string Pw = "Wr0ngP@$$w0rd";
+      private const string Pw = "DevDev1!"; // "Wr0ngP@$$w0rd";
 
       [TestMethod]
       public void WriteThenRead() {

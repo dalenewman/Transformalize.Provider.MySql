@@ -2,7 +2,7 @@
 <package>
    <metadata>
       <id>Transformalize.Provider.MySql</id>
-      <version>0.10.2-beta</version>
+      <version>0.11.1-beta</version>
       <title>Transformalize Transform using MySql</title>
       <authors>Dale Newman</authors>
       <owners>Dale Newman</owners>
@@ -11,12 +11,12 @@
       <license type="expression">MIT</license>
       <description>Transformalize Transform using MySql</description>
       <releaseNotes>gen maint</releaseNotes>
-      <copyright>Copyright © 2018-2024</copyright>
+      <copyright>Copyright © 2018-2025</copyright>
       <tags>etl,transformalize,mysql</tags>
       <dependencies>
          <group targetFramework="netstandard2.0">
-            <dependency id="Transformalize.Provider.Ado" version="0.10.3-beta" />
-            <dependency id="MySqlConnector" version="2.3.0" />
+            <dependency id="Transformalize.Provider.Ado" version="0.11.1-beta" />
+            <dependency id="MySqlConnector" version="2.3.7" />
          </group>
       </dependencies>
    </metadata>

@@ -23,15 +23,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.2.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.2.0" />
-    <PackageReference Include="coverlet.collector" Version="6.0.0" />
-    <PackageReference Include="Transformalize.Provider.Ado.Autofac" Version="0.10.3-beta" />
-    <PackageReference Include="Transformalize.Provider.Bogus.Autofac" Version="0.10.0-beta" />
-    <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.10.5-beta" />
-    <PackageReference Include="Transformalize.Provider.SqlServer.Autofac" Version="0.10.9-beta" />
-    <PackageReference Include="Transformalize.Transform.Jint.Autofac" Version="0.10.3-beta" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.7.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.7.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <PackageReference Include="Transformalize.Provider.Ado.Autofac" Version="0.11.1-beta" />
+    <PackageReference Include="Transformalize.Provider.Bogus.Autofac" Version="0.11.1-beta" />
+    <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.11.1-beta" />
+    <PackageReference Include="Transformalize.Provider.SqlServer.Autofac" Version="0.11.1-beta" />
+    <PackageReference Include="Transformalize.Transform.Jint.Autofac" Version="0.11.2-beta" />
   </ItemGroup>
 
   <ItemGroup>
