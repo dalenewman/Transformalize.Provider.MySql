@@ -1,7 +1,7 @@
 #region license
 // Transformalize
 // Configurable Extract, Transform, and Load
-// Copyright 2013-2016 Dale Newman
+// Copyright 2013-2026 Dale Newman
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -45,13 +45,6 @@ namespace Test {
       public void Integration() {
 
          var logger = new ConsoleLogger(LogLevel.Debug);
-
-         // RESET DATA TO KNOWN STATE BEFORE INITIAL LOAD
-         using (var cn = InputCn()) {
-            cn.Open();
-            cn.Execute("UPDATE OrderDetail SET unitPrice = 14.40, quantity = 42 WHERE orderId = 10253 AND productId = 39;");
-            cn.Execute("UPDATE SalesOrder SET custId = 14, freight = 22.98 WHERE orderId = 10254;");
-         }
 
          using (var outer = new ConfigurationContainer().CreateScope(TestFile + $"?Mode=init&{CfgParams}", logger)) {
             var process = outer.Resolve<Process>();
