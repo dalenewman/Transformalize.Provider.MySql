@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,11 +13,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="files\NorthWindSqlServerToMySql.xml" />
+    <None Remove="files\NorthWindMySqlToMySql.xml" />
+    <None Remove="files\northwind-mysql.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="files\NorthWindSqlServerToMySql.xml">
+    <Content Include="files\NorthWindMySqlToMySql.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\northwind-mysql.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -31,10 +35,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <PackageReference Include="Testcontainers.MySql" Version="4.6.0" />
     <PackageReference Include="Transformalize.Provider.Ado.Autofac" Version="0.11.1-beta" />
     <PackageReference Include="Transformalize.Provider.Bogus.Autofac" Version="0.11.1-beta" />
     <PackageReference Include="Transformalize.Provider.Console.Autofac" Version="0.11.1-beta" />
-    <PackageReference Include="Transformalize.Provider.SqlServer.Autofac" Version="0.11.1-beta" />
     <PackageReference Include="Transformalize.Transform.Jint.Autofac" Version="0.11.2-beta" />
   </ItemGroup>
 
