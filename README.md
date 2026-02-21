@@ -68,4 +68,3 @@ This reads 10 rows of bogus data from a MySql database:
 ### Notes
 
 - Tested with MySql 8
-- You have to make a database called "junk" and provide `user` and `password`

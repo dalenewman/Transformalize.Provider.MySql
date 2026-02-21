@@ -1,7 +1,7 @@
 ﻿#region license
 // Transformalize
 // Configurable Extract, Transform, and Load
-// Copyright 2013-2017 Dale Newman
+// Copyright 2013-2026 Dale Newman
 //  
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,8 +30,6 @@ namespace Test {
    [TestClass]
    public class Test {
 
-      private const string Pw = "DevDev1!"; // "Wr0ngP@$$w0rd";
-
       [TestMethod]
       public void WriteThenRead() {
 
@@ -42,7 +40,7 @@ namespace Test {
   </parameters>
   <connections>
     <add name='input' provider='bogus' seed='1' />
-    <add name='output' provider='mysql' database='junk' user='root' password='{Pw}' />
+    <add name='output' provider='mysql' server='{Tester.Server}' port='{Tester.Port}' database='junk' user='{Tester.User}' password='{Tester.Pw}' />
   </connections>
   <entities>
     <add name='Contact' size='@[Size]'>
@@ -69,7 +67,7 @@ namespace Test {
 
          var readXml = $@"<add name='Bogus'>
   <connections>
-    <add name='input' provider='mysql' database='junk' user='root' password='{Pw}' />
+    <add name='input' provider='mysql' server='{Tester.Server}' port='{Tester.Port}' database='junk' user='{Tester.User}' password='{Tester.Pw}' />
     <add name='output' provider='internal' />
   </connections>
   <entities>
